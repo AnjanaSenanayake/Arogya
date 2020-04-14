@@ -13,7 +13,7 @@ import lk.gov.arogya.R;
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText edtFullName, edtNIC, edtMobileNumber;
-    private EditText edtDivSecretariat, edtGramaDivCode;
+    private EditText edtPassword;
     private Button btnRegister;
     private TextView tvLinkToLogin;
 
@@ -24,8 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
         edtFullName = findViewById(R.id.edt_full_name);
         edtNIC = findViewById(R.id.edt_nic);
         edtMobileNumber = findViewById(R.id.edt_phone_number);
-        edtDivSecretariat = findViewById(R.id.edt_divisional_secretariat);
-        edtGramaDivCode = findViewById(R.id.edt_grama_division);
+        edtPassword = findViewById(R.id.edt_password);
         tvLinkToLogin = findViewById(R.id.tv_link_to_login);
         tvLinkToLogin.setOnClickListener(new OnClickListener() {
             @Override

@@ -12,7 +12,7 @@ import lk.gov.arogya.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText edtNIC, edtPasscode;
+    private EditText edtNIC, edtPassword;
     private Button btnLogin;
     private TextView tvLinkToRegister;
 
@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         edtNIC = findViewById(R.id.edt_nic);
-        edtPasscode = findViewById(R.id.edt_pass_code);
+        edtPassword = findViewById(R.id.edt_password);
         btnLogin = findViewById(R.id.btn_login);
         tvLinkToRegister = findViewById(R.id.tv_link_to_register);
         tvLinkToRegister.setOnClickListener(new OnClickListener() {

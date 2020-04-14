@@ -90,14 +90,14 @@
                     app:srcCompat="@drawable/ic_password" />
 
                 <EditText
-                    android:id="@+id/edt_pass_code"
+                    android:id="@+id/edt_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
-                    android:hint="Passcode"
-                    android:inputType="phone"
+                    android:hint="@string/tv_password"
+                    android:inputType="textPassword"
                     android:textColorHint="@color/subTextColor" />
 
             </LinearLayout>
@@ -114,26 +114,11 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/rect_blue"
             android:gravity="center"
-            android:text="Login"
+            android:text="@string/btn_login"
             android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_sign_out"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rect_light_green"
-        android:text="Register"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/view_links"
@@ -160,6 +145,24 @@
             android:layout_marginLeft="8dp"
             android:text="@string/tv_register"
             android:textColor="@color/lightBlue"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_reset_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Forgot password?"
+            android:textColor="@color/subTextColor"
             android:textSize="15sp" />
 
     </LinearLayout>

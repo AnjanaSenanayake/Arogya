@@ -106,7 +106,6 @@
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
                     android:hint="@string/edt_nic_number"
-                    android:inputType="phone"
                     android:textColorHint="@color/subTextColor" />
 
             </LinearLayout>
@@ -170,17 +169,16 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_pin" />
+                    app:srcCompat="@drawable/ic_password" />
 
                 <EditText
-                    android:id="@+id/edt_divisional_secretariat"
+                    android:id="@+id/edt_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
-                    android:hint="@string/edt_divisional_secretariat"
-                    android:inputType="phone"
+                    android:hint="@string/tv_password"
                     android:textColorHint="@color/subTextColor" />
 
             </LinearLayout>
@@ -207,17 +205,16 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_street" />
+                    app:srcCompat="@drawable/ic_password" />
 
                 <EditText
-                    android:id="@+id/edt_grama_division"
+                    android:id="@+id/edt_confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
-                    android:hint="@string/edt_grama_niladhari_division"
-                    android:inputType="number"
+                    android:hint="@string/tv_confirm_password"
                     android:textColorHint="@color/subTextColor" />
 
             </LinearLayout>
@@ -239,21 +236,6 @@
             android:textSize="15sp" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_sign_out"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rect_light_green"
-        android:text="Register"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/view_links"
