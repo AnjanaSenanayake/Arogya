@@ -1,8 +1,10 @@
-package lk.gov.arogya;
+package lk.gov.arogya.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import lk.gov.arogya.R;
 
 public class MainActivity extends AppCompatActivity {
 

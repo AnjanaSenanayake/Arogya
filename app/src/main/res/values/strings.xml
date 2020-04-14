@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Arogya</string>
+
+    <!--SignUp Activity-->
+    <string name="tv_welcome_arogya">Welcome to Arogya</string>
+    <string name="tv_register_with_arogya">Register with Arogya</string>
+    <string name="edt_full_name">Full name</string>
+    <string name="edt_nic_number">NIC number</string>
+    <string name="edt_mobile_number">Mobile number</string>
+    <string name="edt_divisional_secretariat">Divisional secretariat</string>
+    <string name="edt_grama_niladhari_division">Grama Niladhari division</string>
+    <string name="btn_register">Register</string>
+    <string name="tv_already_registered">Already registered?</string>
+    <string name="tv_login">Login</string>
+
+    <!--Login Activity-->
+    <string name="tv_not_registered_yet">Not registered yet?</string>
+    <string name="tv_register">Register</string>
 </resources>

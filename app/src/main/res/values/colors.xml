@@ -3,4 +3,27 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="overlayBackground">#7f333639</color>
+    <color name="transparentBackground">#2DFFFFFF</color>
+
+    <!--common colors-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="green">#62DD15</color>
+    <color name="lightGreen">#F292FF0D</color>
+    <color name="red">#D11D10</color>
+    <color name="lightRed">#e64538</color>
+    <color name="lightBlue">#3277d8</color>
+
+    <!--component colors-->
+    <color name="welcomeAboardTextColor">#323643</color>
+    <color name="appNameTitleColor">@color/green</color>
+    <color name="appSloganColor">@color/lightGreen</color>
+    <color name="textColor">#282A2C</color>
+    <color name="subTextColor">#908484</color>
+    <color name="backdrop">#F7F7F7</color>
+    <color name="cardViewBackgroundColor">@color/white</color>
+    <color name="floatingActionBtnColor">@color/white</color>
+    <color name="buttonTextColor">@color/white</color>
+    <color name="seatPreviewBackgroundColor">#1A000000</color>
 </resources>
