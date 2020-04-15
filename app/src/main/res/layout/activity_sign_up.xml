@@ -15,12 +15,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_heartbeat" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +53,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_user" />
+                    android:background="@drawable/ic_user" />
 
                 <EditText
                     android:id="@+id/edt_full_name"
@@ -96,7 +90,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_id_card" />
+                    android:background="@drawable/ic_id_card" />
 
                 <EditText
                     android:id="@+id/edt_nic"
@@ -132,7 +126,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_phone" />
+                    android:background="@drawable/ic_phone" />
 
                 <EditText
                     android:id="@+id/edt_phone_number"
@@ -169,7 +163,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_password" />
+                    android:background="@drawable/ic_password" />
 
                 <EditText
                     android:id="@+id/edt_password"
@@ -205,7 +199,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_password" />
+                    android:background="@drawable/ic_password" />
 
                 <EditText
                     android:id="@+id/edt_confirm_password"

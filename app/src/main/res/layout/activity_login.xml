@@ -19,7 +19,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_heartbeat" />
+            android:background="@drawable/ic_heartbeat" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_id_card" />
+                    android:background="@drawable/ic_id_card" />
 
                 <EditText
                     android:id="@+id/edt_nic"
@@ -87,7 +87,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/ic_password" />
+                    android:background="@drawable/ic_password" />
 
                 <EditText
                     android:id="@+id/edt_password"
