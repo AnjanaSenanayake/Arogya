@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import lk.gov.arogya.R;
+import lk.gov.arogya.utils.SharedPreferencesHelper;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -41,6 +42,12 @@ public class SignUpActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View view) {
+                SharedPreferencesHelper.saveUserNicOrPassportNo(SignUpActivity.this, edtNIC.getText().toString());
+                SharedPreferencesHelper.saveUserFullName(SignUpActivity.this, edtFullName.getText().toString());
+                SharedPreferencesHelper.saveUserMobileNo(SignUpActivity.this, edtMobileNumber.getText().toString());
+                SharedPreferencesHelper.saveUserPassword(SignUpActivity.this, edtPassword.getText().toString());
+
+
                 startActivity(new Intent(SignUpActivity.this, AskUserInformationActivity.class));
             }
         });

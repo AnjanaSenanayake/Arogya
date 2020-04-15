@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import lk.gov.arogya.R;
+import lk.gov.arogya.utils.SharedPreferencesHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -35,6 +36,9 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View view) {
+                SharedPreferencesHelper.saveUserNicOrPassportNo(LoginActivity.this,edtNIC.getText().toString());
+                SharedPreferencesHelper.saveUserPassword(LoginActivity.this,edtPassword.getText().toString());
+
                 startActivity(new Intent(LoginActivity.this, AskUserInformationActivity.class));
             }
         });
