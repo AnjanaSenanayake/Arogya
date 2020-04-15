@@ -19,4 +19,8 @@
     <string name="tv_not_registered_yet">Not registered yet?</string>
     <string name="tv_register">Register</string>
     <string name="btn_login">Login</string>
+
+    <!--Ask User Information Activity-->
+    <string name="submit_user_info">Submit</string>
+
 </resources>

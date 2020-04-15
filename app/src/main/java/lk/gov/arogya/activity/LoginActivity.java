@@ -61,9 +61,12 @@ public class LoginActivity extends Activity {
                     public void accept(final String s) {
                         if (s.contains("encrypted_password")) {
                             Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+		            //temp code for checking AskUserInformationActivity
+		            startActivity(new Intent(LoginActivity.this, AskUserInformationActivity.class));
                         } else {
                             Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+		            //temp code for checking AskUserInformationActivity
+		            startActivity(new Intent(LoginActivity.this, AskUserInformationActivity.class));
                         }
                     }
                 }, new Consumer<Throwable>() {
