@@ -60,7 +60,7 @@
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
                     android:hint="@string/edt_nic_number"
-                    android:inputType="phone"
+                    android:inputType="text"
                     android:textColorHint="@color/subTextColor" />
 
             </LinearLayout>
