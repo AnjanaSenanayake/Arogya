@@ -7,7 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import lk.gov.arogya.R;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -21,6 +23,8 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        btnRegister = findViewById(R.id.btn_register);
+
         edtFullName = findViewById(R.id.edt_full_name);
         edtNIC = findViewById(R.id.edt_nic);
         edtMobileNumber = findViewById(R.id.edt_phone_number);
@@ -30,6 +34,14 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(final View view) {
                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+            }
+        });
+
+        //temp code for checking AskUserInformationActivity
+        btnRegister.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                startActivity(new Intent(SignUpActivity.this, AskUserInformationActivity.class));
             }
         });
     }

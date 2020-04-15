@@ -30,5 +30,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
         });
+
+        //temp code for checking AskUserInformationActivity
+        btnLogin.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                startActivity(new Intent(LoginActivity.this, AskUserInformationActivity.class));
+            }
+        });
     }
 }
