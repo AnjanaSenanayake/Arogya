@@ -44,7 +44,21 @@ public class LoginActivity extends Activity {
             public void onClick(final View view) {
                 String nic = edtNIC.getText().toString();
                 String password = edtPassword.getText().toString();
-                login(nic, password);
+
+                if (nic.matches("") && password.matches("")) {
+                    Toast.makeText(LoginActivity.this, "Please fill NIC/Passport number and Password fields", Toast.LENGTH_SHORT).show();
+                    return;
+                }else if(nic.matches("")){
+                    Toast.makeText(LoginActivity.this, "Please fill NIC/Passport number field", Toast.LENGTH_SHORT).show();
+                    return;
+                }else if(password.matches("")){
+                    Toast.makeText(LoginActivity.this, "Please fill Password field", Toast.LENGTH_SHORT).show();
+                    return;
+                }else{
+                    login(nic, password);
+                }
+
+
             }
         });
     }
