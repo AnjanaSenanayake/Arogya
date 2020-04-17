@@ -62,7 +62,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                     android:hint="@string/edt_full_name"
                     android:inputType="text"
                     android:textColorHint="@color/subTextColor" />
@@ -94,7 +94,7 @@
                     android:background="@drawable/ic_id_card" />
 
                 <EditText
-                    android:id="@+id/edt_nic"
+                    android:id="@+id/edt_nicpp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -133,7 +133,7 @@
                     android:background="@drawable/ic_phone" />
 
                 <EditText
-                    android:id="@+id/edt_phone_number"
+                    android:id="@+id/edt_primary_contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"

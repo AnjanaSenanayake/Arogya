@@ -22,8 +22,8 @@ import retrofit2.Retrofit;
 public class SignUpActivity extends Activity {
 
     private static final String TAG = "SignUpActivity";
-    private EditText edtFullName, edtNIC, edtMobileNumber;
-    private EditText edtPassword,editConfirmPassword;
+    private EditText edtFullName, edtNICPP, edtPrimaryContact;
+    private EditText edtPassword, editConfirmPassword;
     private Button btnRegister;
     private TextView tvLinkToLogin;
 
@@ -32,8 +32,8 @@ public class SignUpActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         edtFullName = findViewById(R.id.edt_full_name);
-        edtNIC = findViewById(R.id.edt_nic);
-        edtMobileNumber = findViewById(R.id.edt_phone_number);
+        edtNICPP = findViewById(R.id.edt_nicpp);
+        edtPrimaryContact = findViewById(R.id.edt_primary_contact);
         edtPassword = findViewById(R.id.edt_password);
         editConfirmPassword = findViewById(R.id.edt_confirm_password);
         btnRegister = findViewById(R.id.btn_register);
@@ -48,18 +48,18 @@ public class SignUpActivity extends Activity {
             @Override
             public void onClick(final View view) {
                 String name = edtFullName.getText().toString();
-                String nic = edtNIC.getText().toString();
-                String mobile = edtMobileNumber.getText().toString();
+                String nic = edtNICPP.getText().toString();
+                String mobile = edtPrimaryContact.getText().toString();
                 String password = edtPassword.getText().toString();
                 String confirmPassword = editConfirmPassword.getText().toString();
-
-                if(!password.equals(confirmPassword)){
-                    Toast.makeText(SignUpActivity.this, "Password and confirm password does not match", Toast.LENGTH_SHORT).show();
+                if (!password.equals(confirmPassword)) {
+                    Toast.makeText(SignUpActivity.this, "Password and confirm password does not match",
+                            Toast.LENGTH_SHORT).show();
                     return;
-                }else if (name.matches("") || nic.matches("") || mobile.matches("") || password.matches("")) {
+                } else if (name.matches("") || nic.matches("") || mobile.matches("") || password.matches("")) {
                     Toast.makeText(SignUpActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                     return;
-                }else{
+                } else {
                     register(name, nic, mobile, password);
                 }
 

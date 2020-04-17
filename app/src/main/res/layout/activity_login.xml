@@ -53,7 +53,7 @@
                     android:background="@drawable/ic_id_card" />
 
                 <EditText
-                    android:id="@+id/edt_nic"
+                    android:id="@+id/edt_nicpp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
