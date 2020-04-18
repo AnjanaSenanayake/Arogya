@@ -12,22 +12,15 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.material.snackbar.Snackbar;
-
 import lk.gov.arogya.R;
 import lk.gov.arogya.models.Messages;
 import lk.gov.arogya.support.RestAPI;
 import lk.gov.arogya.support.RestAPI.OnSuccessListener;
-import lk.gov.arogya.utils.SharedPreferencesHelper;
 
 public class SignUpActivity extends Activity {
 
     private static final String TAG = "SignUpActivity";
-    private String name;
-    private String nic;
-    private String mobile;
-    private String password;
     private EditText edtFullName, edtNICPP, edtPrimaryContact;
     private EditText edtPassword, editConfirmPassword;
     private Button btnRegister;
@@ -56,16 +49,11 @@ public class SignUpActivity extends Activity {
         btnRegister.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View view) {
-                name = edtFullName.getText().toString();
-                nic = edtNICPP.getText().toString();
-                mobile = edtPrimaryContact.getText().toString();
-                password = edtPassword.getText().toString();
+                String name = edtFullName.getText().toString();
+                String nic = edtNICPP.getText().toString();
+                String mobile = edtPrimaryContact.getText().toString();
+                String password = edtPassword.getText().toString();
                 String confirmPassword = editConfirmPassword.getText().toString();
-
-//                saveUserInfoInDevice();
-//                checking for app functionality without server will remove later
-//                startActivity(new Intent(SignUpActivity.this, AskUserInformationActivity.class));
-
                 if (!password.equals(confirmPassword)) {
                     Toast.makeText(SignUpActivity.this, "Password and confirm password does not match",
                             Toast.LENGTH_SHORT).show();
@@ -86,8 +74,8 @@ public class SignUpActivity extends Activity {
             public void onSuccess(String response) {
                 response = response.replace("\"", "");
                 if (response.equals(Messages.REGISTER_SUCCESS.getMessage())) {
-                    Toast.makeText(SignUpActivity.this, getResources().getString(R.string.msg_register_success), Toast.LENGTH_LONG).show();
-                    saveUserInfoInDevice();
+                    Toast.makeText(SignUpActivity.this, getResources().getString(R.string.msg_register_success),
+                            Toast.LENGTH_LONG).show();
                     startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                     finish();
                 } else if (response.equals(Messages.USER_ALREADY_EXISTS.getMessage())) {
@@ -119,12 +107,5 @@ public class SignUpActivity extends Activity {
                 });
         snackbar.setActionTextColor(Color.RED);
         snackbar.show();
-    }
-
-    private void saveUserInfoInDevice() {
-        SharedPreferencesHelper.saveUserFullName(this, name);
-        SharedPreferencesHelper.saveUserMobileNo(this, mobile);
-        SharedPreferencesHelper.saveUserNicOrPassportNo(this, nic);
-        SharedPreferencesHelper.saveUserPassword(this, password);
     }
 }

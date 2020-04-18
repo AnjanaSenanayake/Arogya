@@ -11,9 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.material.snackbar.Snackbar;
-
 import lk.gov.arogya.R;
 import lk.gov.arogya.models.Messages;
 import lk.gov.arogya.support.RestAPI;
@@ -46,11 +44,6 @@ public class LoginActivity extends Activity {
             public void onClick(final View view) {
                 String nic = edtNICPP.getText().toString();
                 String password = edtPassword.getText().toString();
-
-//                checking for app functionality without server, will remove later
-//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-
-
                 if (nic.matches("") && password.matches("")) {
                     Toast.makeText(LoginActivity.this, "Please fill NIC/Passport number and Password fields",
                             Toast.LENGTH_SHORT).show();

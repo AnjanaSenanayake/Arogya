@@ -12,13 +12,13 @@ public interface NodeJSAPI {
     @FormUrlEncoded
     Observable<String> register(
             @Field("name") String name,
-            @Field("nic") String nic,
-            @Field("mobile") String mobile,
+            @Field("nicpp") String nicpp,
+            @Field("primaryContact") String primaryContact,
             @Field("password") String password);
 
     @POST("login")
     @FormUrlEncoded
     Observable<String> login(
-            @Field("nic") String nic,
+            @Field("nicpp") String nicpp,
             @Field("password") String password);
 }
