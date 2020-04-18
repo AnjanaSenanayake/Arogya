@@ -28,24 +28,27 @@
             android:layout_width="match_parent"
             android:layout_height="15dp" />
 
+        <Button
+            android:id="@+id/dob_txtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of birth" />
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            app:endIconMode="clear_text"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-
                 android:hint="Date of Birth"
-                android:text="mm/dd/yyyy"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:text="dd/mm/yyyy" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -55,24 +58,25 @@
 
 
         <RadioGroup
+            android:id="@+id/gender_radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkedButton="@+id/gender_radio_group"
+            android:checkedButton="@+id/rdo_male"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gender"/>
+                android:text="Gender" />
 
             <RadioButton
-                android:id="@+id/first"
+                android:id="@+id/rdo_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male" />
 
             <RadioButton
-                android:id="@+id/second"
+                android:id="@+id/rdo_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Female" />
@@ -80,6 +84,6 @@
 
     </LinearLayout>
 
-    <include layout="@layout/prev_button"/>
+    <include layout="@layout/include_prev_and_submit_buttons" />
 
 </LinearLayout>

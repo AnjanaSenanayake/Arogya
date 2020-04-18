@@ -23,4 +23,10 @@
     <!--Ask User Information Activity-->
     <string name="submit_user_info">Submit</string>
 
+    <!--Messages & Warnings-->
+    <string name="msg_register_failed">Register Failed</string>
+    <string name="msg_user_already_exists">User Already Exists</string>
+    <string name="msg_register_success">Register Success</string>
+    <string name="msg_login_failed">Login Failed</string>
+
 </resources>

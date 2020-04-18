@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="lk.gov.arogya">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TempResultsActivity"></activity>
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,11 +23,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.SignUpActivity" />
+        <activity android:name=".activity.SignUpActivity"/>
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.AskUserInformationActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.ShowMyInfoActivity" />
+        <activity android:name=".activity.TempResultsActivity" />
+
     </application>
 
 </manifest>

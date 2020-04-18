@@ -1,12 +1,12 @@
 package lk.gov.arogya.activity;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import lk.gov.arogya.R;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle icicle) {

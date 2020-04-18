@@ -8,52 +8,62 @@
     android:paddingTop="15dp"
     android:paddingRight="24dp">
 
-    <TextView
-        android:id="@+id/show_movie_title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|top"
-        android:gravity="center"
-        android:padding="1dp"
-        android:text="GS and DS details"
-        android:textStyle="bold" />
+        android:layout_weight="0"
+        android:orientation="vertical">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="5dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:endIconMode="clear_text"
-        app:errorEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/gs_division"
+        <TextView
+            android:id="@+id/show_movie_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Grama Sewaka Division"
-            android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center|top"
+            android:gravity="center"
+            android:padding="1dp"
+            android:text="GS and DS details"
+            android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:endIconMode="clear_text"
-        app:errorEnabled="true">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/div_sec"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Divisional Secretariat"
-            android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/gs_division"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Grama Sewaka Division"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/div_sec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Divisional Secretariat"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/include_nxt_button" />
 
 </LinearLayout>
