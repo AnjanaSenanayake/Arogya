@@ -21,12 +21,18 @@
             android:layout_gravity="center|top"
             android:gravity="center"
             android:padding="1dp"
-            android:text="GS and DS details"
+            android:text="Personal details"
             android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="5dp" />
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/dob_txtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of birth" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -34,36 +40,50 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            app:endIconMode="clear_text"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/gs_division"
+                android:id="@+id/dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Grama Sewaka Division"
-                android:inputType="textPersonName" />
+                android:hint="Date of Birth"
+                android:inputType="textPersonName"
+                android:text="dd/mm/yyyy" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true">
+            android:layout_height="15dp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/div_sec"
+
+        <RadioGroup
+            android:id="@+id/gender_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/rdo_male"
+            android:orientation="vertical">
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Divisional Secretariat"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="Gender" />
+
+            <RadioButton
+                android:id="@+id/rdo_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/rdo_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
 
     </LinearLayout>
 
-    <include layout="@layout/include_nxt_button" />
+    <include layout="@layout/include_prev_and_submit_buttons" />
 
 </LinearLayout>

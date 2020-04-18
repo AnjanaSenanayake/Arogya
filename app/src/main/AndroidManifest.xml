@@ -25,10 +25,11 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.SignUpActivity"/>
         <activity android:name=".activity.MainActivity" />
-
         <activity
             android:name=".activity.AskUserInformationActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.ShowMyInfoActivity" />
+        <activity android:name=".activity.TempResultsActivity" />
 
     </application>
 

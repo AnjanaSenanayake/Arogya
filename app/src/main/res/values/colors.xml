@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <!--    <color name="colorPrimary">#008577</color>-->
+    <!--    <color name="colorPrimaryDark">#00574B</color>-->
+
+    <color name="colorPrimary">@color/lightBlue</color>
+    <color name="colorPrimaryDark">#01579B</color>
+
     <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent2">#C5E1A5</color>
+    <color name="rippleColour">#81D4FA</color>
+    <color name="opacityReducePrimary">#7301579B</color>
+
+
     <color name="overlayBackground">#7f333639</color>
     <color name="transparentBackground">#2DFFFFFF</color>
 
