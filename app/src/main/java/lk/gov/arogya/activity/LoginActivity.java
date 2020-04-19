@@ -65,6 +65,7 @@ public class LoginActivity extends Activity {
     }
 
     private void login(String nicpp, String password) {
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
         RestAPI.login(nicpp, password, new OnSuccessListener<String, Throwable>() {
             @Override
             public void onSuccess(String response) {
@@ -72,7 +73,7 @@ public class LoginActivity extends Activity {
                 if (response.equals(Messages.LOGIN_SUCCESS.getMessage())) {
                     Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_LONG).show();
                     //temp code for checking AskUserInformationActivity
-                    startActivity(new Intent(LoginActivity.this, AskUserInformationActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else if (response.equals(Messages.USER_DOES_NOT_EXISTS.getMessage())) {
                     showSnackBarMessage(Messages.USER_DOES_NOT_EXISTS.getMessage());
                 } else if (response.equals(Messages.INCORRECT_PASSWORD.getMessage())) {

@@ -20,6 +20,9 @@
     <string name="tv_register">Register</string>
     <string name="btn_login">Login</string>
 
+    <!--Main Activity-->
+    <string name="personal_information">Personal Information</string>
+
     <!--Ask User Information Activity-->
     <string name="submit_user_info">Submit</string>
 
@@ -28,5 +31,6 @@
     <string name="msg_user_already_exists">User Already Exists</string>
     <string name="msg_register_success">Register Success</string>
     <string name="msg_login_failed">Login Failed</string>
+    <string name="disease_trends">Disease Trends</string>
 
 </resources>
