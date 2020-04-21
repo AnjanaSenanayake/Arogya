@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_register_user"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backdrop"
+    android:orientation="vertical"
+    tools:context=".activity.UserRegisterActivity">
+
+    <include
+        android:id="@+id/toolbar_register_user"
+        layout="@layout/include_toolbar_layout" />
+
+    <TextView
+        android:id="@+id/tv_no_schedules_list_msg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/tv_you_have_not_registered_any_users"
+        android:textColor="@color/textColor"
+        android:layout_below="@id/toolbar_register_user"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_register_user"
+        android:layout_above="@id/fab_add_schedule">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_schedules"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/add"
+        app:backgroundTint="@color/floatingActionBtnColor" />
+
+</RelativeLayout>

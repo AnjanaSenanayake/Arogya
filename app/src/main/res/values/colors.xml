@@ -20,8 +20,9 @@
     <color name="black">#000000</color>
     <color name="green">#62DD15</color>
     <color name="lightGreen">#F292FF0D</color>
-    <color name="red">#D11D10</color>
+    <color name="red">#E2362A</color>
     <color name="lightRed">#e64538</color>
+    <color name="lightOrange">#FFAB40</color>
     <color name="lightBlue">#3277d8</color>
 
     <!--component colors-->

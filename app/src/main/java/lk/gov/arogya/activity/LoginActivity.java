@@ -11,9 +11,15 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONException;
+
 import lk.gov.arogya.R;
 import lk.gov.arogya.models.Messages;
+import lk.gov.arogya.support.ContentHolder;
+import lk.gov.arogya.support.JSONUtils;
 import lk.gov.arogya.support.RestAPI;
 import lk.gov.arogya.support.RestAPI.OnSuccessListener;
 
@@ -65,14 +71,19 @@ public class LoginActivity extends Activity {
     }
 
     private void login(String nicpp, String password) {
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        //temp code for checking AskUserInformationActivity
+        //startActivity(new Intent(LoginActivity.this, MainActivity.class));
         RestAPI.login(nicpp, password, new OnSuccessListener<String, Throwable>() {
             @Override
             public void onSuccess(String response) {
                 response = response.replace("\"", "");
-                if (response.equals(Messages.LOGIN_SUCCESS.getMessage())) {
-                    Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_LONG).show();
-                    //temp code for checking AskUserInformationActivity
+                if (response.contains("UID")) {
+                    Toast.makeText(LoginActivity.this, R.string.msg_login_success, Toast.LENGTH_LONG).show();
+                    try {
+                        ContentHolder.setUID(JSONUtils.parseToJSON(response).getString("UID"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else if (response.equals(Messages.USER_DOES_NOT_EXISTS.getMessage())) {
                     showSnackBarMessage(Messages.USER_DOES_NOT_EXISTS.getMessage());

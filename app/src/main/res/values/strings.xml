@@ -22,15 +22,38 @@
 
     <!--Main Activity-->
     <string name="personal_information">Personal Information</string>
+    <string name="disease_trends">Disease Trends</string>
 
     <!--Ask User Information Activity-->
+    <string name="edit">Edit</string>
     <string name="submit_user_info">Submit</string>
+
+    <!--User Register Activity-->
+    <string name="tv_you_have_not_registered_any_users">You have not registered any users</string>
 
     <!--Messages & Warnings-->
     <string name="msg_register_failed">Register Failed</string>
     <string name="msg_user_already_exists">User Already Exists</string>
     <string name="msg_register_success">Register Success</string>
     <string name="msg_login_failed">Login Failed</string>
-    <string name="disease_trends">Disease Trends</string>
+    <string name="msg_login_success">Login Success</string>
+    <string name="msg_submit_success">Submit Success</string>
+
+    <!--Preference Utils Ids-->
+    <string name="id_full_name">id_full_name</string>
+    <string name="id_dob">id_dob</string>
+    <string name="id_gender">id_gender</string>
+    <string name="id_marital_status">id_marital_status</string>
+    <string name="id_primary_contact">id_primary_contact</string>
+    <string name="id_secondary_contact_1">id_secondary_contact_1</string>
+    <string name="id_secondary_contact_2">id_secondary_contact_2</string>
+    <string name="id_emergency_contact">id_emergency_contact</string>
+    <string name="id_emergency_contact_relation">id_emergency_contact_relation</string>
+    <string name="id_address_line_1">id_address_line_1</string>
+    <string name="id_address_line_2">id_address_line_2</string>
+    <string name="id_address_line_3">id_address_line_3</string>
+    <string name="id_address_line_4">id_address_line_4</string>
+    <string name="id_ds">id_ds</string>
+    <string name="id_gn">id_gn</string>
 
 </resources>

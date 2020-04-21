@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".activity.PersonalInformationActivity">
+
+    <include
+        android:id="@+id/toolbar_personal_info"
+        layout="@layout/include_toolbar_layout" />
+
+    <RelativeLayout
+        android:id="@+id/layout_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_personal_info"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/view_verification"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@color/lightOrange" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Verification Pending"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/view"
+        android:layout_below="@id/layout_verification">
+
+        <LinearLayout
+            android:id="@+id/layout_personal_information"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!--Name-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Name"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Nic/passportNo-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_nic_or_passport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="NIC / Passport"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_nic_or_passport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Mobile no-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_mobile_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Primary Contact"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_primary_contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Address-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Address"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_address1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="Address1" />
+
+                        <TextView
+                            android:id="@+id/tv_address2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="Address2" />
+
+                        <TextView
+                            android:id="@+id/tv_address3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="Address3" />
+
+                        <TextView
+                            android:id="@+id/tv_address4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="Address4" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--DS & GN Divisions-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_ds_gn_divisions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Divisional Secretariat"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_ds"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Grama Niladhari Division"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_gn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--DOB-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Date of birth"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Gender-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Gender"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Emergency Contact-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_emergency_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Emergency Contact"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_emergency_contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Relation to Emergency Contact"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_emergency_contact_relation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Secondary Contacts-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_secondary_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Secondary Contacts"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_secondary_contact1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+
+                        <TextView
+                            android:id="@+id/tv_secondary_contact2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Marital Status-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_marital_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="5dp"
+                app:rippleColor="@color/rippleColour"
+                app:strokeColor="@android:color/holo_green_dark"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_user" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="Marital Status"
+                            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+                        <TextView
+                            android:id="@+id/tv_marital_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary"
+                            tools:text="sss" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/backdrop" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@color/red"
+        android:text="@string/edit"
+        android:textSize="18sp" />
+
+</RelativeLayout>

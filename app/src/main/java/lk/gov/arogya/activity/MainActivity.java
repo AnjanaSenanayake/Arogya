@@ -15,7 +15,7 @@ import lk.gov.arogya.R;
 import lk.gov.arogya.activity.parent.ToolbarActivity;
 import lk.gov.arogya.adapter.MainActivityRecyclerViewAdapter;
 import lk.gov.arogya.models.MainComponent;
-import lk.gov.arogya.utils.GridSpacingItemDecoration;
+import lk.gov.arogya.support.GridSpacingItemDecoration;
 
 public class MainActivity extends ToolbarActivity {
 
@@ -39,17 +39,17 @@ public class MainActivity extends ToolbarActivity {
         MainComponent diseaseInformation = new MainComponent("Disease Information", R.drawable.ic_diseases);
         MainComponent emergencyContacts = new MainComponent("Emergency Services", R.drawable.ic_question);
         MainComponent myHealthTracker = new MainComponent("My Health Tracker", R.drawable.ic_question);
-        MainComponent mainComponent6 = new MainComponent("test1", R.drawable.ic_question);
+        MainComponent otherUsers = new MainComponent("Other Users", R.drawable.ic_others_200dp);
         MainComponent mainComponent7 = new MainComponent("test", R.drawable.ic_question);
         MainComponent mainComponent8 = new MainComponent("test", R.drawable.ic_question);
 
 
-        personalInformation.setCls(ShowMyInfoActivity.class);
+        personalInformation.setCls(PersonalInformationActivity.class);
         diseaseTends.setCls(TempResultsActivity.class);
         diseaseInformation.setCls(TempResultsActivity.class);
         emergencyContacts.setCls(TempResultsActivity.class);
         myHealthTracker.setCls(TempResultsActivity.class);
-        mainComponent6.setCls(TempResultsActivity.class);
+        otherUsers.setCls(UserRegisterActivity.class);
         mainComponent7.setCls(TempResultsActivity.class);
         mainComponent8.setCls(TempResultsActivity.class);
 
@@ -59,7 +59,7 @@ public class MainActivity extends ToolbarActivity {
         mainComponents.add(diseaseInformation);
         mainComponents.add(emergencyContacts);
         mainComponents.add(myHealthTracker);
-        mainComponents.add(mainComponent6);
+        mainComponents.add(otherUsers);
         mainComponents.add(mainComponent7);
         mainComponents.add(mainComponent8);
 

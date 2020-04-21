@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/linear_layout_address_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="24dp"
-    android:paddingTop="12dp"
+    android:paddingTop="15dp"
     android:paddingRight="24dp">
 
     <LinearLayout
@@ -16,32 +15,33 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/show_movie_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:gravity="center"
             android:padding="1dp"
-            android:text="Enter your Address Details"
+            android:text="Contact Details"
             android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="2dp" />
+            android:layout_height="5dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             app:endIconMode="clear_text"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address_1"
+                android:id="@+id/edt_primary_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Address Line 1"
+                android:hint="Primary Contact"
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -49,16 +49,15 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true">
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address_2"
+                android:id="@+id/edt_secondary_contact1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Address Line 2"
+                android:hint="Secondary Contact 1"
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,39 +65,63 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
             app:endIconMode="clear_text"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address_3"
+                android:id="@+id/edt_secondary_contact2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Address Line 3"
+                android:hint="Secondary Contact 2"
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true">
+            android:weightSum="12"
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address_4"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="Address Line 4"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="7"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="15dp"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="2dp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_emergency_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Emergency Contact"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_emergency_contact_relation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Relation"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
 
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-package lk.gov.arogya.utils;
+package lk.gov.arogya.support;
 
 import android.graphics.Rect;
 import android.view.View;

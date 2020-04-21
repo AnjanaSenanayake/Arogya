@@ -7,14 +7,16 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:usesCleartextTraffic="true"
+        android:name=".Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.UserRegisterActivity"></activity>
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,14 +25,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.SignUpActivity"/>
+        <activity android:name=".activity.SignUpActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.AskUserInformationActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.ShowMyInfoActivity" />
+        <activity android:name=".activity.PersonalInformationActivity" />
         <activity android:name=".activity.TempResultsActivity" />
-
     </application>
 
 </manifest>

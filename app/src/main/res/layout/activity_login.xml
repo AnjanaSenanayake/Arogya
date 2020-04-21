@@ -60,6 +60,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
+                    app:endIconMode="clear_text"
                     android:hint="@string/edt_nic_number"
                     android:maxLength="12"
                     android:inputType="text"
@@ -99,6 +100,7 @@
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparentBackground"
                     android:hint="@string/tv_password"
+                    app:endIconMode="clear_text"
                     android:inputType="textPassword"
                     android:textColorHint="@color/subTextColor" />
 

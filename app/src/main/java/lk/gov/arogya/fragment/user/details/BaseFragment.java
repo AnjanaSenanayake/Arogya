@@ -39,7 +39,7 @@ public class BaseFragment extends Fragment {
     private void showFragment(Fragment fragment) {
         if (getActivity() != null) {
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+            transaction.setCustomAnimations(android.R.anim.slide_out_right, android.R.anim.slide_in_left);
             transaction.replace(R.id.frag_placeholder, fragment);
 //        transaction.addToBackStack(null);
             transaction.commit();

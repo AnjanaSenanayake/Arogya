@@ -10,13 +10,12 @@ import androidx.annotation.NonNull;
 import com.google.android.material.textfield.TextInputEditText;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.utils.SharedPreferencesHelper;
+import lk.gov.arogya.support.PreferenceUtil;
+
+import static lk.gov.arogya.activity.AskUserInformationActivity.newUser;
 
 public class AskAddressFragment extends BaseFragment {
-    private TextInputEditText addressLine1;
-    private TextInputEditText addressLine2;
-    private TextInputEditText addressLine3;
-    private TextInputEditText addressLine4;
+    private TextInputEditText addressLine1, addressLine2, addressLine3, addressLine4;
 
 
     @Override
@@ -35,24 +34,26 @@ public class AskAddressFragment extends BaseFragment {
         addressLine2 = view.findViewById(R.id.address_2);
         addressLine3 = view.findViewById(R.id.address_3);
         addressLine4 = view.findViewById(R.id.address_4);
-        initSavedValuesToTxtView();
-        initNextBtn(view, new AskPersonalDetailsFragment());
-        initPrevBtn(view, new AskGsAndDsFragment());
-    }
+        initNextBtn(view, new AskAdministrationDetailsFragment());
+        initPrevBtn(view, new AskContactDetailsFragment());
 
-    private void initSavedValuesToTxtView() {
-        addressLine1.setText(SharedPreferencesHelper.getUserAddress1(getActivity()));
-        addressLine2.setText(SharedPreferencesHelper.getUserAddress2(getActivity()));
-        addressLine3.setText(SharedPreferencesHelper.getUserAddress3(getActivity()));
-        addressLine4.setText(SharedPreferencesHelper.getUserAddress4(getActivity()));
+        addressLine1.setText(PreferenceUtil.getSharedPreferenceString(R.string.id_address_line_1));
+        addressLine2.setText(PreferenceUtil.getSharedPreferenceString(R.string.id_address_line_2));
+        addressLine3.setText(PreferenceUtil.getSharedPreferenceString(R.string.id_address_line_3));
+        addressLine4.setText(PreferenceUtil.getSharedPreferenceString(R.string.id_address_line_4));
     }
 
     @Override
     public void saveValues() {
-        SharedPreferencesHelper.saveUserAddress1(getActivity(), addressLine1.getText().toString());
-        SharedPreferencesHelper.saveUserAddress2(getActivity(), addressLine2.getText().toString());
-        SharedPreferencesHelper.saveUserAddress3(getActivity(), addressLine3.getText().toString());
-        SharedPreferencesHelper.saveUserAddress4(getActivity(), addressLine4.getText().toString());
+        newUser.setAddressLine1(addressLine1.getText().toString());
+        newUser.setAddressLine2(addressLine2.getText().toString());
+        newUser.setAddressLine3(addressLine3.getText().toString());
+        newUser.setAddressLine4(addressLine4.getText().toString());
+
+        PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_1, newUser.getAddressLine1());
+        PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_2, newUser.getAddressLine2());
+        PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_3, newUser.getAddressLine3());
+        PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_4, newUser.getAddressLine4());
     }
 }
 

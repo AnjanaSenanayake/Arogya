@@ -11,7 +11,10 @@ public enum Messages {
     ERROR_RETRV_PROFILE_WITH_UID("Error retrieving profile with uid: "),
     LOGIN_SUCCESS("Login success"),
     LOGIN_FAILED("Login failed"),
-    INCORRECT_PASSWORD("Incorrect password");
+    INCORRECT_PASSWORD("Incorrect password"),
+    NOT_FOUND_USER_WITH_NICPP("Not found User with nicpp: "),
+    ERROR_UPDATING_USER_WITH_NICPP("Error updating User with nicpp "),
+    UPDATE_SUCCESS("Update success");
 
     public String message;
 
