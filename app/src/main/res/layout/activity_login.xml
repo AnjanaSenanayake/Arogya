@@ -8,7 +8,7 @@
     android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activity.SignUpActivity">
+    tools:context=".signup.SignUpActivity">
 
     <LinearLayout
         android:id="@+id/view_sign_up"

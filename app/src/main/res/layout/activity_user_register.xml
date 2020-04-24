@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backdrop"
     android:orientation="vertical"
-    tools:context=".activity.UserRegisterActivity">
+    tools:context=".otherusers.UserRegisterActivity">
 
     <include
         android:id="@+id/toolbar_register_user"

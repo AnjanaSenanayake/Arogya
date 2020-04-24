@@ -1,4 +1,4 @@
-package lk.gov.arogya.support;
+package lk.gov.arogya.api;
 
 import android.util.Log;
 
@@ -8,11 +8,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import lk.gov.arogya.activity.LoginActivity;
-import lk.gov.arogya.activity.UserRegisterActivity;
-import lk.gov.arogya.interfaces.NodeJSAPI;
+import lk.gov.arogya.login.LoginActivity;
+import lk.gov.arogya.otherusers.UserRegisterActivity;
 import lk.gov.arogya.models.Messages;
 import lk.gov.arogya.models.User;
+import lk.gov.arogya.support.ContentHolder;
 import retrofit2.Retrofit;
 
 public class RestAPI {

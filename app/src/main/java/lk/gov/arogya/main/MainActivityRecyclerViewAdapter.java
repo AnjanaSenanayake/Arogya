@@ -1,4 +1,4 @@
-package lk.gov.arogya.adapter;
+package lk.gov.arogya.main;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.models.MainComponent;
 
 public class MainActivityRecyclerViewAdapter extends RecyclerView.Adapter<MainActivityRecyclerViewAdapter.MyViewHolder> {
 

@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya.login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,14 +14,16 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import lk.gov.arogya.main.MainActivity;
+import lk.gov.arogya.signup.SignUpActivity;
 import org.json.JSONException;
 
 import lk.gov.arogya.R;
 import lk.gov.arogya.models.Messages;
 import lk.gov.arogya.support.ContentHolder;
 import lk.gov.arogya.support.JSONUtils;
-import lk.gov.arogya.support.RestAPI;
-import lk.gov.arogya.support.RestAPI.OnSuccessListener;
+import lk.gov.arogya.api.RestAPI;
+import lk.gov.arogya.api.RestAPI.OnSuccessListener;
 
 public class LoginActivity extends Activity {
 

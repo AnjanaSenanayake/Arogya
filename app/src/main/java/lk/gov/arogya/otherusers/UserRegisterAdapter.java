@@ -1,4 +1,4 @@
-package lk.gov.arogya.adapter;
+package lk.gov.arogya.otherusers;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.activity.PersonalInformationActivity;
+import lk.gov.arogya.personalinformation.PersonalInformationActivity;
 import lk.gov.arogya.models.User;
 
 

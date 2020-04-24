@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya.otherusers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,10 +18,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.adapter.UserRegisterAdapter;
+import lk.gov.arogya.askuserinformation.AskUserInformationActivity;
 import lk.gov.arogya.models.User;
 import lk.gov.arogya.support.ContentHolder;
-import lk.gov.arogya.support.RestAPI;
+import lk.gov.arogya.api.RestAPI;
 
 public class UserRegisterActivity extends AppCompatActivity {
 

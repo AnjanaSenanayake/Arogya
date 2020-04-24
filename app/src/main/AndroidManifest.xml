@@ -16,22 +16,22 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.UserRegisterActivity"></activity>
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".otherusers.UserRegisterActivity"></activity>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.SignUpActivity" />
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".signup.SignUpActivity" />
+        <activity android:name=".main.MainActivity" />
         <activity
-            android:name=".activity.AskUserInformationActivity"
+            android:name=".askuserinformation.AskUserInformationActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.PersonalInformationActivity" />
-        <activity android:name=".activity.TempResultsActivity" />
+        <activity android:name=".personalinformation.PersonalInformationActivity" />
+        <activity android:name=".TempResultsActivity" />
     </application>
 
 </manifest>

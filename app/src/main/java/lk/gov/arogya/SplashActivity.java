@@ -1,10 +1,10 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import lk.gov.arogya.R;
+import lk.gov.arogya.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

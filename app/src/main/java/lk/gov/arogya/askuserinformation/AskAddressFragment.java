@@ -1,4 +1,4 @@
-package lk.gov.arogya.fragment.user.details;
+package lk.gov.arogya.askuserinformation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import lk.gov.arogya.R;
 import lk.gov.arogya.support.PreferenceUtil;
 
-import static lk.gov.arogya.activity.AskUserInformationActivity.newUser;
+import static lk.gov.arogya.askuserinformation.AskUserInformationActivity.newUser;
 
 public class AskAddressFragment extends BaseFragment {
     private TextInputEditText addressLine1, addressLine2, addressLine3, addressLine4;

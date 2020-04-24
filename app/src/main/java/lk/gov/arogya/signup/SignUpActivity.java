@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya.signup;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,9 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import lk.gov.arogya.R;
+import lk.gov.arogya.login.LoginActivity;
 import lk.gov.arogya.models.Messages;
-import lk.gov.arogya.support.RestAPI;
-import lk.gov.arogya.support.RestAPI.OnSuccessListener;
+import lk.gov.arogya.api.RestAPI;
+import lk.gov.arogya.api.RestAPI.OnSuccessListener;
 
 public class SignUpActivity extends Activity {
 

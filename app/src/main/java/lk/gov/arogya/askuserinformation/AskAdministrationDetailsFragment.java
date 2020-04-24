@@ -1,4 +1,4 @@
-package lk.gov.arogya.fragment.user.details;
+package lk.gov.arogya.askuserinformation;
 
 
 import android.content.Intent;
@@ -17,14 +17,14 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.activity.PersonalInformationActivity;
+import lk.gov.arogya.personalinformation.PersonalInformationActivity;
 import lk.gov.arogya.models.User;
 import lk.gov.arogya.support.ContentHolder;
 import lk.gov.arogya.support.PreferenceUtil;
-import lk.gov.arogya.support.RestAPI;
+import lk.gov.arogya.api.RestAPI;
 
-import static lk.gov.arogya.activity.AskUserInformationActivity.isNewUser;
-import static lk.gov.arogya.activity.AskUserInformationActivity.newUser;
+import static lk.gov.arogya.askuserinformation.AskUserInformationActivity.isNewUser;
+import static lk.gov.arogya.askuserinformation.AskUserInformationActivity.newUser;
 
 public class AskAdministrationDetailsFragment extends BaseFragment {
 

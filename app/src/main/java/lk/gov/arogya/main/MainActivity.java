@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya.main;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -12,9 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.activity.parent.ToolbarActivity;
-import lk.gov.arogya.adapter.MainActivityRecyclerViewAdapter;
-import lk.gov.arogya.models.MainComponent;
+import lk.gov.arogya.personalinformation.PersonalInformationActivity;
+import lk.gov.arogya.TempResultsActivity;
+import lk.gov.arogya.otherusers.UserRegisterActivity;
+import lk.gov.arogya.parent.ToolbarActivity;
 import lk.gov.arogya.support.GridSpacingItemDecoration;
 
 public class MainActivity extends ToolbarActivity {

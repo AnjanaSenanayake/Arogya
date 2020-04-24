@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya.askuserinformation;
 
 import android.os.Bundle;
 
@@ -9,11 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.activity.parent.ToolbarActivity;
-import lk.gov.arogya.fragment.user.details.AskAddressFragment;
-import lk.gov.arogya.fragment.user.details.AskAdministrationDetailsFragment;
-import lk.gov.arogya.fragment.user.details.AskContactDetailsFragment;
-import lk.gov.arogya.fragment.user.details.AskPersonalDetailsFragment;
+import lk.gov.arogya.parent.ToolbarActivity;
 import lk.gov.arogya.models.User;
 import lk.gov.arogya.support.PreferenceUtil;
 

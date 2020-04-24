@@ -1,4 +1,4 @@
-package lk.gov.arogya.interfaces;
+package lk.gov.arogya.api;
 
 
 import io.reactivex.Observable;

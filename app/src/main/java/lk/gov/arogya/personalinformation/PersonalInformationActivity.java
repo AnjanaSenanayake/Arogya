@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya.personalinformation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +11,13 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 
 import lk.gov.arogya.R;
-import lk.gov.arogya.activity.parent.ToolbarActivity;
+import lk.gov.arogya.askuserinformation.AskUserInformationActivity;
+import lk.gov.arogya.parent.ToolbarActivity;
 import lk.gov.arogya.models.Constants;
 import lk.gov.arogya.models.User;
 import lk.gov.arogya.support.ContentHolder;
 import lk.gov.arogya.support.PreferenceUtil;
-import lk.gov.arogya.support.RestAPI;
+import lk.gov.arogya.api.RestAPI;
 
 public class PersonalInformationActivity extends ToolbarActivity {
 

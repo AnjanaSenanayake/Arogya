@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity;
+package lk.gov.arogya;
 
 import android.os.Bundle;
 import android.widget.TextView;

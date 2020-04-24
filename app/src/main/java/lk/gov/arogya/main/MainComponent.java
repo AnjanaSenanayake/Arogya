@@ -1,4 +1,4 @@
-package lk.gov.arogya.models;
+package lk.gov.arogya.main;
 
 public class MainComponent {
 

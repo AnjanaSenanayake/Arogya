@@ -1,4 +1,4 @@
-package lk.gov.arogya.activity.parent;
+package lk.gov.arogya.parent;
 
 import android.annotation.SuppressLint;
 import android.view.MenuItem;

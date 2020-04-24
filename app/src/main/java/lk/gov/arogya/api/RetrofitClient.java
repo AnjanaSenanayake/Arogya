@@ -1,4 +1,4 @@
-package lk.gov.arogya.support;
+package lk.gov.arogya.api;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

@@ -1,4 +1,4 @@
-package lk.gov.arogya.fragment.user.details;
+package lk.gov.arogya.askuserinformation;
 
 import android.view.View;
 import android.widget.Button;
