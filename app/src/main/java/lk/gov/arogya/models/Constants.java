@@ -52,4 +52,22 @@ public class Constants {
             }
         }
     }
+
+    public enum Disease {
+        NONE("None"),
+        COVID19("COVID19"),
+        INFLUENZA("Influenza"),
+        SARS("SARS"),
+        EBOLA("Ebola");
+
+        private String diease;
+
+        Disease(String disease) {
+            this.diease = disease;
+        }
+
+        public String getDiease() {
+            return diease;
+        }
+    }
 }

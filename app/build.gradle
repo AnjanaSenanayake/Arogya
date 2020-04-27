@@ -5,8 +5,9 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "lk.gov.arogya"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -22,6 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
@@ -30,22 +32,33 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation "com.google.android.gms:play-services-places:17.0.0"
+    implementation 'com.google.android.gms:play-services-nearby:17.0.0'
+    implementation 'com.google.gms:google-services:4.3.3'
+    implementation 'com.google.maps.android:android-maps-utils:1.0.2'
+    implementation 'com.google.firebase:firebase-messaging:20.1.6'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.android.volley:volley:1.1.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.8.1'
     implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'com.ethanhua:skeleton:1.1.2'
     implementation 'io.supercharge:shimmerlayout:2.1.0'
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
+apply plugin: 'com.google.gms.google-services'

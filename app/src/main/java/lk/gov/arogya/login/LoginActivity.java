@@ -21,7 +21,7 @@ import org.json.JSONException;
 import lk.gov.arogya.R;
 import lk.gov.arogya.models.Messages;
 import lk.gov.arogya.support.ContentHolder;
-import lk.gov.arogya.support.JSONUtils;
+import lk.gov.arogya.support.ParserUtils;
 import lk.gov.arogya.api.RestAPI;
 import lk.gov.arogya.api.RestAPI.OnSuccessListener;
 
@@ -84,7 +84,8 @@ public class LoginActivity extends FormValidationActivity {
                 if (response.contains("UID")) {
                     Toast.makeText(LoginActivity.this, R.string.msg_login_success, Toast.LENGTH_LONG).show();
                     try {
-                        ContentHolder.setUID(JSONUtils.parseToJSON(response).getString("UID"));
+                        String UID = ParserUtils.parseToJSON(response).getString("UID");
+                        ContentHolder.setUID(UID);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

@@ -1,0 +1,15 @@
+<vector android:height="300dp" android:viewportHeight="512"
+    android:viewportWidth="512" android:width="300dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#b5dbff" android:pathData="m135,466h-30c-8.291,0 -15,-6.709 -15,-15s6.709,-15 15,-15h30c8.291,0 15,6.709 15,15s-6.709,15 -15,15z"/>
+    <path android:fillColor="#b5dbff" android:pathData="m226,466h-31c-8.291,0 -15,-6.709 -15,-15s6.709,-15 15,-15h31c8.291,0 15,6.709 15,15s-6.709,15 -15,15z"/>
+    <path android:fillColor="#b5dbff" android:pathData="m317,466h-31c-8.291,0 -15,-6.709 -15,-15s6.709,-15 15,-15h31c8.291,0 15,6.709 15,15s-6.709,15 -15,15z"/>
+    <path android:fillColor="#b5dbff" android:pathData="m407,466h-30c-8.291,0 -15,-6.709 -15,-15s6.709,-15 15,-15h30c8.291,0 15,6.709 15,15s-6.709,15 -15,15z"/>
+    <path android:fillColor="#76e2f8" android:pathData="M75,106m-60,0a60,60 0,1 1,120 0a60,60 0,1 1,-120 0"/>
+    <path android:fillColor="#66c0ee" android:pathData="m135,106c0,-33.091 -26.909,-60 -60,-60v120c33.091,0 60,-26.909 60,-60z"/>
+    <path android:fillColor="#76e2f8" android:pathData="m75,166c-41.353,0 -75,33.647 -75,75v90c0,8.291 6.709,15 15,15h15v105c0,8.291 6.709,15 15,15h30,30c8.291,0 15,-6.709 15,-15v-105h15c8.291,0 15,-6.709 15,-15v-90c0,-41.353 -33.647,-75 -75,-75z"/>
+    <path android:fillColor="#66c0ee" android:pathData="m120,451v-105h15c8.291,0 15,-6.709 15,-15v-90c0,-41.353 -33.647,-75 -75,-75v300h30c8.291,0 15,-6.709 15,-15z"/>
+    <path android:fillColor="#ff6a4d" android:pathData="M437,106m-60,0a60,60 0,1 1,120 0a60,60 0,1 1,-120 0"/>
+    <path android:fillColor="#e62e2e" android:pathData="m497,106c0,-33.091 -26.909,-60 -60,-60v120c33.091,0 60,-26.909 60,-60z"/>
+    <path android:fillColor="#ff6a4d" android:pathData="m437,166c-41.353,0 -75,33.647 -75,75v90c0,8.291 6.709,15 15,15h15v105c0,8.291 6.709,15 15,15h30,30c8.291,0 15,-6.709 15,-15v-105h15c8.291,0 15,-6.709 15,-15v-90c0,-41.353 -33.647,-75 -75,-75z"/>
+    <path android:fillColor="#e62e2e" android:pathData="m482,451v-105h15c8.291,0 15,-6.709 15,-15v-90c0,-41.353 -33.647,-75 -75,-75v300h30c8.291,0 15,-6.709 15,-15z"/>
+</vector>

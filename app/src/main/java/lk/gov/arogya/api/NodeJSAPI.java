@@ -4,7 +4,6 @@ package lk.gov.arogya.api;
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface NodeJSAPI {
@@ -71,4 +70,14 @@ public interface NodeJSAPI {
     @FormUrlEncoded
     Observable<String> getAllChildUsers(
             @Field("pid") String pid);
+
+    @POST("getAllEpidemics")
+    Observable<String> getAllEpidemics();
+
+    @POST("createEpidemicAlert")
+    @FormUrlEncoded
+    Observable<String> createEpidemicAlert(
+            @Field("UID") String uid,
+            @Field("epidemicID") int epidemicID,
+            @Field("alertDate") String alertDate);
 }

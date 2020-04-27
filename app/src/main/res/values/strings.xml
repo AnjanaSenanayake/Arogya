@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Arogya</string>
 
+    <!--Firebase, API Key etc-->
+    <string name="firebase_app_id">1:432620095786:android:0f1bda5cc1e1068978f653</string>
+    <string name="firebase_api_key">AIzaSyBIyZGLDCPqgb99Q4LUJmlkhmpmAvLlh0w</string>
+
     <!--SignUp Activity-->
     <string name="tv_welcome_arogya">Welcome to Arogya</string>
     <string name="tv_register_with_arogya">Register with Arogya</string>
@@ -39,7 +43,7 @@
     <string name="msg_login_success">Login Success</string>
     <string name="msg_submit_success">Submit Success</string>
 
-    <!--Preference Utils Ids-->
+    <!--Preference FileUtils Ids-->
     <string name="id_full_name">id_full_name</string>
     <string name="id_dob">id_dob</string>
     <string name="id_gender">id_gender</string>
@@ -55,5 +59,10 @@
     <string name="id_address_line_4">id_address_line_4</string>
     <string name="id_ds">id_ds</string>
     <string name="id_gn">id_gn</string>
+    <string name="id_current_health_status">id_current_health_status</string>
+    <string name="id_contact_trace">id_contact_trace</string>
+
+    <!--Contact Trace Activity-->
+    <string name="push_notification">Contact Tracer: Someone you interacted with changed their health status to </string>
 
 </resources>

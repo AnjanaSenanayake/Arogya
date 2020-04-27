@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "432620095786",
+    "firebase_url": "https://arogya-62853.firebaseio.com",
+    "project_id": "arogya-62853",
+    "storage_bucket": "arogya-62853.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432620095786:android:0f1bda5cc1e1068978f653",
+        "android_client_info": {
+          "package_name": "lk.gov.arogya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432620095786-jl1t4uiertlv4iuboo9ta1kh5psm5b7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lk.gov.arogya",
+            "certificate_hash": "7e5fcd31459dd43e8b7d50cb1c7df6d06a9adac6"
+          }
+        },
+        {
+          "client_id": "432620095786-rnk0c8l2n0e7vdh9uqldn36rmhlpom84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIyZGLDCPqgb99Q4LUJmlkhmpmAvLlh0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432620095786-rnk0c8l2n0e7vdh9uqldn36rmhlpom84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

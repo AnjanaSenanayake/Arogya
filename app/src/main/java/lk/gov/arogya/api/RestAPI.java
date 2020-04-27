@@ -1,18 +1,16 @@
 package lk.gov.arogya.api;
 
 import android.util.Log;
-
-import java.util.ArrayList;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import lk.gov.arogya.login.LoginActivity;
-import lk.gov.arogya.otherusers.UserRegisterActivity;
+import java.util.ArrayList;
+import java.util.HashMap;
 import lk.gov.arogya.models.Messages;
 import lk.gov.arogya.models.User;
 import lk.gov.arogya.support.ContentHolder;
+import lk.gov.arogya.support.ParserUtils;
 import retrofit2.Retrofit;
 
 public class RestAPI {
@@ -58,7 +56,7 @@ public class RestAPI {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(final String s) {
-                        Log.d(LoginActivity.class.getSimpleName(), "Payload: " + s);
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
                         listener.onSuccess(s);
                     }
                 }, new Consumer<Throwable>() {
@@ -79,7 +77,7 @@ public class RestAPI {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(final String s) {
-                        Log.d(UserRegisterActivity.class.getSimpleName(), "Payload: " + s);
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
                         User user = User.parseToUser(s);
                         ContentHolder.setUser(user);
                         listener.onSuccess(user);
@@ -107,7 +105,7 @@ public class RestAPI {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(final String s) {
-                        Log.d(UserRegisterActivity.class.getSimpleName(), "Payload: " + s);
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
                         if (s.equals(Messages.UPDATE_SUCCESS.getMessage()))
                             listener.onSuccess(true);
                         else
@@ -135,7 +133,7 @@ public class RestAPI {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(final String s) {
-                        Log.d(UserRegisterActivity.class.getSimpleName(), "Payload: " + s);
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
                         listener.onSuccess(User.parseToUser(s));
                     }
                 }, new Consumer<Throwable>() {
@@ -156,7 +154,7 @@ public class RestAPI {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(final String s) {
-                        Log.d(UserRegisterActivity.class.getSimpleName(), "Payload: " + s);
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
                         listener.onSuccess(User.parseToUserList(s));
                     }
                 }, new Consumer<Throwable>() {
@@ -167,5 +165,48 @@ public class RestAPI {
                     }
                 }));
         Log.d(RestAPI.class.getSimpleName(), "Ending getAllChildUsers method");
+    }
+
+    public static void getAllEpidemics(OnSuccessListener<HashMap<Integer, String>, Throwable> listener) {
+        Log.d(RestAPI.class.getSimpleName(), "Starting getAllEpidemics method");
+        compositeDisposable.add(nodeJSAPI.getAllEpidemics()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String s) {
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
+                        listener.onSuccess(
+                                (HashMap<Integer, String>) ParserUtils.parseToMap(s, "EpidemicID", "EpidemicName"));
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) {
+                        Log.e(RestAPI.class.getSimpleName(), throwable.getMessage(), throwable);
+                        listener.onFailure(throwable);
+                    }
+                }));
+        Log.d(RestAPI.class.getSimpleName(), "Ending getAllEpidemics method");
+    }
+
+    public static void createEpidemicAlert(String UID, int infectionID, String indentifiedDate, OnSuccessListener<Boolean, Throwable> listener) {
+        Log.d(RestAPI.class.getSimpleName(), "Starting createEpidemicAlert method");
+        compositeDisposable.add(nodeJSAPI.createEpidemicAlert(UID, infectionID, indentifiedDate)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String s) {
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
+                        listener.onSuccess(true);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) {
+                        Log.e(RestAPI.class.getSimpleName(), throwable.getMessage(), throwable);
+                        listener.onFailure(throwable);
+                    }
+                }));
+        Log.d(RestAPI.class.getSimpleName(), "Ending createEpidemicAlert method");
     }
 }
