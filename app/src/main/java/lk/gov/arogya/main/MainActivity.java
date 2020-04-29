@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import lk.gov.arogya.R;
 import lk.gov.arogya.TempResultsActivity;
+import lk.gov.arogya.curfewpass.CurfewPassActivity;
 import lk.gov.arogya.nearbypeopletracker.DiseaseContactTraceActivity;
 import lk.gov.arogya.otherusers.UserRegisterActivity;
 import lk.gov.arogya.parent.ToolbarActivity;
@@ -51,7 +52,7 @@ public class MainActivity extends ToolbarActivity {
                 R.drawable.ic_virus_transmission_300dp);
         MainComponent myHealthTracker = new MainComponent("My Health Tracker", R.drawable.ic_question);
         MainComponent otherUsers = new MainComponent("Other Users", R.drawable.ic_others_200dp);
-        MainComponent mainComponent7 = new MainComponent("test", R.drawable.ic_question);
+        MainComponent passRequest = new MainComponent("Request a Pass", R.drawable.ic_permission_80dp);
         MainComponent mainComponent8 = new MainComponent("test", R.drawable.ic_question);
 
         personalInformation.setCls(PersonalInformationActivity.class);
@@ -60,7 +61,7 @@ public class MainActivity extends ToolbarActivity {
         nearbyPeopleTracker.setCls(DiseaseContactTraceActivity.class);
         myHealthTracker.setCls(TempResultsActivity.class);
         otherUsers.setCls(UserRegisterActivity.class);
-        mainComponent7.setCls(TempResultsActivity.class);
+        passRequest.setCls(CurfewPassActivity.class);
         mainComponent8.setCls(TempResultsActivity.class);
 
         mainComponents.add(personalInformation);
@@ -69,7 +70,7 @@ public class MainActivity extends ToolbarActivity {
         mainComponents.add(nearbyPeopleTracker);
         mainComponents.add(myHealthTracker);
         mainComponents.add(otherUsers);
-        mainComponents.add(mainComponent7);
+        mainComponents.add(passRequest);
         mainComponents.add(mainComponent8);
 
         MainActivityRecyclerViewAdapter adapter = new MainActivityRecyclerViewAdapter(mainComponents);

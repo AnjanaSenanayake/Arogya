@@ -107,6 +107,7 @@ public class LoginActivity extends FormValidationActivity {
             public void onFailure(final Throwable err) {
                 hideProgressBar();
                 enableAllButtons();
+                showSnackBarMessage(Messages.LOGIN_FAILED.getMessage());
             }
         });
     }

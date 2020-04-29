@@ -695,4 +695,14 @@
         android:text="@string/edit"
         android:textSize="18sp" />
 
+    <ProgressBar
+        android:id="@+id/loading_spinner"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/lightBlue"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone" />
+
 </RelativeLayout>

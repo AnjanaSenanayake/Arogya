@@ -70,4 +70,20 @@ public class Constants {
             return diease;
         }
     }
+
+    public enum Approval {
+        APPROVED("Approved"),
+        DENIED("Denied"),
+        PENDING("Pending");
+
+        private String approval;
+
+        Approval(String approval) {
+            this.approval = approval;
+        }
+
+        public String getApproval() {
+            return approval;
+        }
+    }
 }

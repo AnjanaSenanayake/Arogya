@@ -3,6 +3,8 @@ package lk.gov.arogya.support;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import lk.gov.arogya.models.Constants.Approval;
+import lk.gov.arogya.models.CurfewPassRequest;
 import lk.gov.arogya.models.EpidemicAlert;
 import lk.gov.arogya.models.User;
 import org.json.JSONArray;
@@ -11,19 +13,19 @@ import org.json.JSONObject;
 
 public class ParserUtils {
 
-    public static ArrayList<String> parseToStringList(String payload) {
-        ArrayList<String> uids = new ArrayList<>();
+    public static ArrayList<String> parseToStringList(String payload, String key) {
+        ArrayList<String> list = new ArrayList<>();
         try {
             JSONArray jArray = new JSONArray(payload);
             for (int i = 0; i < jArray.length(); i++) {
                 User newUser = new User();
                 JSONObject uidJSONObject = jArray.getJSONObject(i);
-                uids.add(uidJSONObject.getString("UID"));
+                list.add(uidJSONObject.getString(key));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return uids;
+        return list;
     }
 
     public static JSONObject parseToJSON(String payload) {
@@ -36,18 +38,18 @@ public class ParserUtils {
     }
 
     public static Map<Integer, String> parseToMap(String payload, String key, String value) {
-        HashMap<Integer, String> infectionsMap = new HashMap<>();
+        HashMap<Integer, String> map = new HashMap<>();
         try {
             JSONArray jArray = new JSONArray(payload);
             JSONObject jsonObject;
             for (int i = 0; i < jArray.length(); i++) {
                 jsonObject = jArray.getJSONObject(i);
-                infectionsMap.put(jsonObject.getInt(key), jsonObject.getString(value));
+                map.put(jsonObject.getInt(key), jsonObject.getString(value));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return infectionsMap;
+        return map;
     }
 
     public static ArrayList<EpidemicAlert> parseToEpidemicAlertList(String alertList, String contactsList) {
@@ -72,5 +74,31 @@ public class ParserUtils {
             }
         }
         return epidemicAlerts;
+    }
+
+    public static ArrayList<CurfewPassRequest> parseToCurfewPassList(String payload) {
+        ArrayList<CurfewPassRequest> list = new ArrayList<>();
+        CurfewPassRequest curfewPassRequest;
+        try {
+            JSONArray jArray = new JSONArray(payload);
+            for (int i = 0; i < jArray.length(); i++) {
+                curfewPassRequest = new CurfewPassRequest();
+                JSONObject jsonObject = jArray.getJSONObject(i);
+                curfewPassRequest.setRequestID(jsonObject.getInt("RequestID"));
+                curfewPassRequest.setRequestedFor(jsonObject.getString("Name"));
+                curfewPassRequest.setRequestedBy(jsonObject.getString("RequestedBy"));
+                curfewPassRequest.setReasonOfRequest(jsonObject.getString("Reason"));
+                curfewPassRequest.setWhereTo(jsonObject.getString("WhereTo"));
+                curfewPassRequest.setValidDateFrom(jsonObject.getString("ValidFrom"));
+                curfewPassRequest.setValidDateTo(jsonObject.getString("ValidTo"));
+                curfewPassRequest.setInspectedBy(jsonObject.getString("InspectedBy"));
+                curfewPassRequest.setInspectedOn(jsonObject.getString("InspectedOn"));
+                curfewPassRequest.setStatus(Approval.valueOf(jsonObject.getString("Status")));
+                list.add(curfewPassRequest);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

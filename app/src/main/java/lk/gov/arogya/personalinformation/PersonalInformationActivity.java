@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -33,7 +34,8 @@ public class PersonalInformationActivity extends ToolbarActivity {
     private TextView tvMaritalStatus;
     private MaterialButton btnEdit;
     private RelativeLayout layoutVerification;
-    private LinearLayout layoutRoot;
+    private ProgressBar mProgressBar;
+    private boolean isLoading = false;
 
 
     @Override
@@ -49,8 +51,8 @@ public class PersonalInformationActivity extends ToolbarActivity {
 
     @Override
     public void initInstances() {
+        mProgressBar = findViewById(R.id.loading_spinner);
         layoutVerification = findViewById(R.id.layout_verification);
-        layoutRoot = findViewById(R.id.layout_personal_information);
         tvName = findViewById(R.id.tv_name);
         tvNICorPassport = findViewById(R.id.tv_nic_or_passport);
         tvPrimaryContact = findViewById(R.id.tv_primary_contact);
@@ -69,6 +71,7 @@ public class PersonalInformationActivity extends ToolbarActivity {
         tvMaritalStatus = findViewById(R.id.tv_marital_status);
         btnEdit = findViewById(R.id.btn_edit);
 
+        btnEdit.setEnabled(false);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +88,7 @@ public class PersonalInformationActivity extends ToolbarActivity {
             layoutVerification.setVisibility(View.GONE);
         else
             layoutVerification.setVisibility(View.VISIBLE);
+
         tvName.setText(currentUser.getFullName());
         tvNICorPassport.setText(currentUser.getNicpp());
         tvPrimaryContact.setText(currentUser.getPrimaryContact());
@@ -125,16 +129,21 @@ public class PersonalInformationActivity extends ToolbarActivity {
             currentUser = new User();
             currentUser.setUid(ContentHolder.getUID());
         }
+
+        showProgressBar();
         RestAPI.getUserByUID(currentUser.getUid(), new RestAPI.OnSuccessListener<User, Throwable>() {
             @Override
             public void onSuccess(User response) {
                 currentUser = response;
                 populateDataToForm();
+                hideProgressBar();
+                btnEdit.setEnabled(true);
             }
 
             @Override
             public void onFailure(Throwable err) {
-
+                btnEdit.setEnabled(false);
+                hideProgressBar();
             }
         });
     }
@@ -153,7 +162,24 @@ public class PersonalInformationActivity extends ToolbarActivity {
         PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_2, currentUser.getAddressLine2());
         PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_3, currentUser.getAddressLine3());
         PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_4, currentUser.getAddressLine4());
+        PreferenceUtil.setSharedPreferenceString(R.string.id_district, currentUser.getDistrict());
         PreferenceUtil.setSharedPreferenceString(R.string.id_ds, currentUser.getDSDivision());
         PreferenceUtil.setSharedPreferenceString(R.string.id_gn, currentUser.getGNDivision());
+    }
+
+    private void showProgressBar() {
+        isLoading = true;
+        mProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        isLoading = false;
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (!isLoading)
+            super.onBackPressed();
     }
 }

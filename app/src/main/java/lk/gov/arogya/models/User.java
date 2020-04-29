@@ -1,11 +1,10 @@
 package lk.gov.arogya.models;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.Serializable;
-import java.util.ArrayList;
 
 public class User implements Serializable {
     private String uid;
@@ -19,6 +18,7 @@ public class User implements Serializable {
     private String addressLine2;
     private String addressLine3;
     private String addressLine4;
+    private String district;
     private String DSDivision;
     private String GNDivision;
     private String secondaryContact1;
@@ -116,11 +116,19 @@ public class User implements Serializable {
         this.addressLine4 = addressLine4;
     }
 
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(final String district) {
+        this.district = district;
+    }
+
     public String getDSDivision() {
         return DSDivision;
     }
 
-    public void setDSDivision(String DSDivision) {
+    public void setDSDivision(final String DSDivision) {
         this.DSDivision = DSDivision;
     }
 
@@ -128,7 +136,7 @@ public class User implements Serializable {
         return GNDivision;
     }
 
-    public void setGNDivision(String GNDivision) {
+    public void setGNDivision(final String GNDivision) {
         this.GNDivision = GNDivision;
     }
 
@@ -191,10 +199,17 @@ public class User implements Serializable {
             newUser.setPrimaryContact(optString(userJSONObject, "PrimaryContact"));
             newUser.setDob(optString(userJSONObject, "DOB"));
             newUser.setGender(optString(userJSONObject, "Gender"));
-            newUser.setEmergencyContact(optString(userJSONObject, "EmergencyContact"));
-            newUser.setEmergencyContactRelation(optString(userJSONObject, "EmergencyContactRelation"));
             newUser.setSecondaryContact1(optString(userJSONObject, "SecondaryContact1"));
             newUser.setSecondaryContact2(optString(userJSONObject, "SecondaryContact2"));
+            newUser.setEmergencyContact(optString(userJSONObject, "EmergencyContact"));
+            newUser.setEmergencyContactRelation(optString(userJSONObject, "EmergencyContactRelation"));
+            newUser.setAddressLine1(optString(userJSONObject, "AddressLine1"));
+            newUser.setAddressLine2(optString(userJSONObject, "AddressLine2"));
+            newUser.setAddressLine3(optString(userJSONObject, "AddressLine3"));
+            newUser.setAddressLine4(optString(userJSONObject, "AddressLine4"));
+            newUser.setDistrict(optString(userJSONObject, "DistrictName"));
+            newUser.setDSDivision(optString(userJSONObject, "DivisionalSecretariatName"));
+            newUser.setGNDivision(optString(userJSONObject, "GNDivisionName"));
             newUser.setMaritalStatus(optString(userJSONObject, "MaritalStatus"));
             if (userJSONObject.getInt("IsVerified") == 1)
                 newUser.setVerified(true);
@@ -220,10 +235,17 @@ public class User implements Serializable {
                 newUser.setPrimaryContact(optString(userJSONObject, "PrimaryContact"));
                 newUser.setDob(optString(userJSONObject, "DOB"));
                 newUser.setGender(optString(userJSONObject, "Gender"));
-                newUser.setEmergencyContact(optString(userJSONObject, "EmergencyContact"));
-                newUser.setEmergencyContactRelation(optString(userJSONObject, "EmergencyContactRelation"));
                 newUser.setSecondaryContact1(optString(userJSONObject, "SecondaryContact1"));
                 newUser.setSecondaryContact2(optString(userJSONObject, "SecondaryContact2"));
+                newUser.setEmergencyContact(optString(userJSONObject, "EmergencyContact"));
+                newUser.setEmergencyContactRelation(optString(userJSONObject, "EmergencyContactRelation"));
+                newUser.setAddressLine1(optString(userJSONObject, "AddressLine1"));
+                newUser.setAddressLine2(optString(userJSONObject, "AddressLine2"));
+                newUser.setAddressLine3(optString(userJSONObject, "AddressLine3"));
+                newUser.setAddressLine4(optString(userJSONObject, "AddressLine4"));
+                newUser.setDistrict(optString(userJSONObject, "DistrictName"));
+                newUser.setDSDivision(optString(userJSONObject, "DivisionalSecretariatName"));
+                newUser.setGNDivision(optString(userJSONObject, "GNDivisionName"));
                 newUser.setMaritalStatus(optString(userJSONObject, "MaritalStatus"));
                 if (userJSONObject.getInt("IsVerified") == 1)
                     newUser.setVerified(true);

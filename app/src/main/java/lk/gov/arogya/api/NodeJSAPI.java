@@ -2,6 +2,7 @@ package lk.gov.arogya.api;
 
 
 import io.reactivex.Observable;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
@@ -80,4 +81,34 @@ public interface NodeJSAPI {
             @Field("UID") String uid,
             @Field("epidemicID") int epidemicID,
             @Field("alertDate") String alertDate);
+
+    @POST("getDSByDistrictName")
+    @FormUrlEncoded
+    Observable<String> getDSByDistrictName(
+            @Field("districtName") String districtName);
+
+    @POST("getGNByDivisionName")
+    @FormUrlEncoded
+    Observable<String> getGNByDivisionName(
+            @Field("DSName") String DSName);
+
+    @POST("requestCurfewPass")
+    @FormUrlEncoded
+    Observable<String> requestCurfewPass(
+            @Field("requestedFor") String requestedFor,
+            @Field("requestedBy") String requestedBy,
+            @Field("reason") String reason,
+            @Field("whereTo") String whereTo,
+            @Field("validFrom") String dateFrom,
+            @Field("validTo") String dateTo);
+
+    @POST("getAllPassRequestsByUser")
+    @FormUrlEncoded
+    Observable<String> getAllCurfewPassesUnderUser(
+            @Field("uid") String requestedBy);
+
+    @DELETE("cancelRequestedCurfewPass")
+    @FormUrlEncoded
+    Observable<String> cancelRequestedCurfewPass(
+            @Field("requestID") int requestID);
 }

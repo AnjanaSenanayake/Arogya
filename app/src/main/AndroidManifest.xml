@@ -22,7 +22,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".nearbypeopletracker.DiseaseContactTraceActivity"></activity>
+        <activity android:name=".curfewpass.CurfewPassActivity"></activity>
+        <activity android:name=".nearbypeopletracker.DiseaseContactTraceActivity" />
         <activity android:name=".otherusers.UserRegisterActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -55,13 +56,14 @@
         <meta-data
             android:name="com.google.android.nearby.messages.API_KEY"
             android:value="AIzaSyAV56KNTYxaRbSc2jp7Ot8sYBCmJkU0SG4" />
-        <service android:name="lk.gov.arogya.nearbypeopletracker.MessagingService">
+
+        <service android:name=".nearbypeopletracker.MessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
         <service
-            android:name="lk.gov.arogya.nearbypeopletracker.NearbyTrackingService"
+            android:name=".nearbypeopletracker.NearbyTrackingService"
             android:enabled="true" />
     </application>
 

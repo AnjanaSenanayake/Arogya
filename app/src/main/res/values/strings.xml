@@ -57,6 +57,7 @@
     <string name="id_address_line_2">id_address_line_2</string>
     <string name="id_address_line_3">id_address_line_3</string>
     <string name="id_address_line_4">id_address_line_4</string>
+    <string name="id_district">id_district</string>
     <string name="id_ds">id_ds</string>
     <string name="id_gn">id_gn</string>
     <string name="id_current_health_status">id_current_health_status</string>
@@ -64,5 +65,8 @@
 
     <!--Contact Trace Activity-->
     <string name="push_notification">Contact Tracer: Someone you interacted with changed their health status to </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -9,9 +9,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:layout_margin="10dp"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                     android:id="@+id/i1"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/user_info" />
+                    android:background="@drawable/ic_permission_80dp" />
 
             </LinearLayout>
 
@@ -48,15 +48,25 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/textColor"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     tools:text="Tikiri Banda Jayasekara" />
 
                 <TextView
-                    android:id="@+id/tv_nicpp"
+                    android:id="@+id/tv_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/textColor"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     tools:text="472208756V" />
+
+                <TextView
+                    android:id="@+id/tv_valid_date_from_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    tools:text="2020-01-01 to 2020-01-31" />
             </LinearLayout>
 
         </LinearLayout>

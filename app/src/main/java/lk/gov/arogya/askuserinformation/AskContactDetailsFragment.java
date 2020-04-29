@@ -1,18 +1,16 @@
 package lk.gov.arogya.askuserinformation;
 
+import static lk.gov.arogya.askuserinformation.AskUserInformationActivity.newUser;
+
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
-
 import com.google.android.material.textfield.TextInputEditText;
-
 import lk.gov.arogya.R;
 import lk.gov.arogya.support.PreferenceUtil;
-
-import static lk.gov.arogya.askuserinformation.AskUserInformationActivity.newUser;
 
 public class AskContactDetailsFragment extends BaseFragment {
 
@@ -49,17 +47,26 @@ public class AskContactDetailsFragment extends BaseFragment {
 
     @Override
     public void saveValues() {
-        newUser.setPrimaryContact(primaryContact.getText().toString());
-        newUser.setSecondaryContact1(secondaryContact1.getText().toString());
-        newUser.setSecondaryContact2(secondaryContact2.getText().toString());
-        newUser.setEmergencyContact(emergencyContact.getText().toString());
-        newUser.setEmergencyContactRelation(emergencyContactRelation.getText().toString());
+        if (TextUtils.isEmpty(primaryContact.getText().toString())) {
+            primaryContact.setError("A primary contact is required");
+        } else if (TextUtils.isEmpty(emergencyContact.getText().toString())) {
+            emergencyContact.setError("An emergency contact is required");
+        } else if (TextUtils.isEmpty(emergencyContactRelation.getText().toString())) {
+            emergencyContactRelation.setError("An emergency contact relation is required");
+        } else {
+            newUser.setPrimaryContact(primaryContact.getText().toString());
+            newUser.setSecondaryContact1(secondaryContact1.getText().toString());
+            newUser.setSecondaryContact2(secondaryContact2.getText().toString());
+            newUser.setEmergencyContact(emergencyContact.getText().toString());
+            newUser.setEmergencyContactRelation(emergencyContactRelation.getText().toString());
 
-        PreferenceUtil.setSharedPreferenceString(R.string.id_primary_contact, newUser.getPrimaryContact());
-        PreferenceUtil.setSharedPreferenceString(R.string.id_secondary_contact_1, newUser.getSecondaryContact1());
-        PreferenceUtil.setSharedPreferenceString(R.string.id_secondary_contact_2, newUser.getSecondaryContact2());
-        PreferenceUtil.setSharedPreferenceString(R.string.id_emergency_contact, newUser.getEmergencyContact());
-        PreferenceUtil.setSharedPreferenceString(R.string.id_emergency_contact_relation, newUser.getEmergencyContactRelation());
+            PreferenceUtil.setSharedPreferenceString(R.string.id_primary_contact, newUser.getPrimaryContact());
+            PreferenceUtil.setSharedPreferenceString(R.string.id_secondary_contact_1, newUser.getSecondaryContact1());
+            PreferenceUtil.setSharedPreferenceString(R.string.id_secondary_contact_2, newUser.getSecondaryContact2());
+            PreferenceUtil.setSharedPreferenceString(R.string.id_emergency_contact, newUser.getEmergencyContact());
+            PreferenceUtil.setSharedPreferenceString(R.string.id_emergency_contact_relation,
+                    newUser.getEmergencyContactRelation());
+        }
     }
 }
 

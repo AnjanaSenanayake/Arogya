@@ -31,8 +31,10 @@ public class AskUserInformationActivity extends ToolbarActivity {
         setContentView(R.layout.activity_ask_user_information);
 
         isNewUser = getIntent().getBooleanExtra("IS_NEW_USER", false);
+        newUser = (User) getIntent().getSerializableExtra("USER");
 
-        clearFormValues();
+        if (isNewUser)
+            clearFormValues();
         initToolbarWithBackButton();
         initInstances();
         showFirstFragment();
@@ -71,6 +73,7 @@ public class AskUserInformationActivity extends ToolbarActivity {
         PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_2, "");
         PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_3, "");
         PreferenceUtil.setSharedPreferenceString(R.string.id_address_line_4, "");
+        PreferenceUtil.setSharedPreferenceString(R.string.id_district, "");
         PreferenceUtil.setSharedPreferenceString(R.string.id_ds, "");
         PreferenceUtil.setSharedPreferenceString(R.string.id_gn, "");
     }

@@ -26,43 +26,49 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="2dp" />
+            android:layout_height="10dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <Spinner
+            android:id="@+id/spinner_district"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true">
+            android:layout_height="45dp"
+            android:hint="District"
+            android:background="@drawable/spinner_background"
+            android:inputType="textPersonName" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_ds"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Divisional Secretariat"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true">
+            android:layout_height="20dp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_gn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Grama Niladhari Division"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <Spinner
+            android:id="@+id/spinner_ds"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Divisional Secretariat"
+            android:background="@drawable/spinner_background"
+            android:inputType="textPersonName" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Spinner
+            android:id="@+id/spinner_gn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Grama Niladhari Division"
+            android:background="@drawable/spinner_background"
+            android:inputType="textPersonName" />
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading_spinner"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
     <include layout="@layout/include_prev_and_submit_buttons" />
 

@@ -7,6 +7,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.HashMap;
+import lk.gov.arogya.models.CurfewPassRequest;
 import lk.gov.arogya.models.Messages;
 import lk.gov.arogya.models.User;
 import lk.gov.arogya.support.ContentHolder;
@@ -208,5 +209,121 @@ public class RestAPI {
                     }
                 }));
         Log.d(RestAPI.class.getSimpleName(), "Ending createEpidemicAlert method");
+    }
+
+    public static void getDSByDistrict(String districtID, OnSuccessListener<ArrayList<String>, Throwable> listener) {
+        Log.d(RestAPI.class.getSimpleName(), "Starting getDSByDistrict method");
+        compositeDisposable.add(nodeJSAPI.getDSByDistrictName(districtID)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String s) {
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
+                        listener.onSuccess(ParserUtils.parseToStringList(s, "DivisionalSecretariatName"));
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) {
+                        Log.e(RestAPI.class.getSimpleName(), throwable.getMessage(), throwable);
+                        listener.onFailure(throwable);
+                    }
+                }));
+        Log.d(RestAPI.class.getSimpleName(), "Ending getDSByDistrict method");
+    }
+
+    public static void getGNByDivision(String DSID, OnSuccessListener<ArrayList<String>, Throwable> listener) {
+        Log.d(RestAPI.class.getSimpleName(), "Starting getGNByDivision method");
+        compositeDisposable.add(nodeJSAPI.getGNByDivisionName(DSID)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String s) {
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
+                        listener.onSuccess(ParserUtils.parseToStringList(s, "GNDivisionName"));
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) {
+                        Log.e(RestAPI.class.getSimpleName(), throwable.getMessage(), throwable);
+                        listener.onFailure(throwable);
+                    }
+                }));
+        Log.d(RestAPI.class.getSimpleName(), "Ending getGNByDivision method");
+    }
+
+    public static void requestCurfewPass(CurfewPassRequest curfewPassRequest,
+            OnSuccessListener<Boolean, Throwable> listener) {
+        Log.d(RestAPI.class.getSimpleName(), "Starting requestCurfewPass method");
+        compositeDisposable.add(nodeJSAPI.requestCurfewPass(
+                curfewPassRequest.getRequestedFor(),
+                ContentHolder.getUID(),
+                curfewPassRequest.getReasonOfRequest(),
+                curfewPassRequest.getWhereTo(),
+                curfewPassRequest.getValidDateFrom(),
+                curfewPassRequest.getValidDateTo())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String s) {
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
+                        listener.onSuccess(true);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) {
+                        Log.e(RestAPI.class.getSimpleName(), throwable.getMessage(), throwable);
+                        listener.onFailure(throwable);
+                    }
+                }));
+        Log.d(RestAPI.class.getSimpleName(), "Ending requestCurfewPass method");
+    }
+
+    public static void getAllCurfewPasses(String requestedBy,
+            OnSuccessListener<ArrayList<CurfewPassRequest>, Throwable> listener) {
+        Log.d(RestAPI.class.getSimpleName(), "Starting getAllCurfewPasses method");
+        compositeDisposable.add(nodeJSAPI.getAllCurfewPassesUnderUser(
+                requestedBy)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String s) {
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
+                        listener.onSuccess(ParserUtils.parseToCurfewPassList(s));
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) {
+                        Log.e(RestAPI.class.getSimpleName(), throwable.getMessage(), throwable);
+                        listener.onFailure(throwable);
+                    }
+                }));
+        Log.d(RestAPI.class.getSimpleName(), "Ending getAllCurfewPasses method");
+    }
+
+    public static void cancelRequestedCurfewPass(int curfewPassRequestID,
+            OnSuccessListener<Boolean, Throwable> listener) {
+        Log.d(RestAPI.class.getSimpleName(), "Starting cancelRequestedCurfewPass method");
+        compositeDisposable.add(nodeJSAPI.cancelRequestedCurfewPass(
+                curfewPassRequestID)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String s) {
+                        Log.d(RestAPI.class.getSimpleName(), "Payload: " + s);
+                        listener.onSuccess(true);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) {
+                        Log.e(RestAPI.class.getSimpleName(), throwable.getMessage(), throwable);
+                        listener.onFailure(throwable);
+                    }
+                }));
+        Log.d(RestAPI.class.getSimpleName(), "Ending cancelRequestedCurfewPass method");
     }
 }

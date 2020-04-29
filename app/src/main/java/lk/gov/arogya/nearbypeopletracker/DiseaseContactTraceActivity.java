@@ -14,7 +14,6 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,6 +27,7 @@ import lk.gov.arogya.R;
 import lk.gov.arogya.api.RestAPI;
 import lk.gov.arogya.api.RestAPI.OnSuccessListener;
 import lk.gov.arogya.models.EpidemicAlert;
+import lk.gov.arogya.parent.ToolbarActivity;
 import lk.gov.arogya.support.ContentHolder;
 import lk.gov.arogya.support.FileUtils;
 import lk.gov.arogya.support.ParserUtils;
@@ -35,7 +35,7 @@ import lk.gov.arogya.support.PermissionResultCallback;
 import lk.gov.arogya.support.PermissionUtils;
 import lk.gov.arogya.support.PreferenceUtil;
 
-public class DiseaseContactTraceActivity extends AppCompatActivity
+public class DiseaseContactTraceActivity extends ToolbarActivity
         implements ActivityCompat.OnRequestPermissionsResultCallback,
         PermissionResultCallback {
 
@@ -55,13 +55,8 @@ public class DiseaseContactTraceActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_trace);
-        layoutRoot = findViewById(R.id.linear_contact_tracer);
-        switchContactTracer = findViewById(R.id.switch_contact_tracer);
-        picker = findViewById(R.id.picker_health_status);
-        tvNoAlerts = findViewById(R.id.tv_no_alerts);
-        alertsRecycler = findViewById(R.id.recycler_alerts);
-        btnAlert = findViewById(R.id.btn_alert);
-        picker.setMinValue(0);
+        initToolbarWithBackButton();
+        initInstances();
 
         // Setup the permissions
         permissionUtils = new PermissionUtils(DiseaseContactTraceActivity.this);
@@ -69,9 +64,20 @@ public class DiseaseContactTraceActivity extends AppCompatActivity
         permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
 
-        setComponentEnable(false);
         loadExistingAlerts();
         loadData();
+    }
+
+    @Override
+    public void initInstances() {
+        layoutRoot = findViewById(R.id.linear_contact_tracer);
+        switchContactTracer = findViewById(R.id.switch_contact_tracer);
+        picker = findViewById(R.id.picker_health_status);
+        tvNoAlerts = findViewById(R.id.tv_no_alerts);
+        alertsRecycler = findViewById(R.id.recycler_alerts);
+        btnAlert = findViewById(R.id.btn_alert);
+        picker.setMinValue(0);
+        setComponentEnable(false);
     }
 
     private void loadData() {

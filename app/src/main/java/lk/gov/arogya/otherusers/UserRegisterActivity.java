@@ -5,25 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
-
 import lk.gov.arogya.R;
+import lk.gov.arogya.api.RestAPI;
 import lk.gov.arogya.askuserinformation.AskUserInformationActivity;
 import lk.gov.arogya.models.User;
+import lk.gov.arogya.parent.ToolbarActivity;
 import lk.gov.arogya.support.ContentHolder;
-import lk.gov.arogya.api.RestAPI;
 
-public class UserRegisterActivity extends AppCompatActivity {
+public class UserRegisterActivity extends ToolbarActivity {
 
     private ArrayList<User> otherUsers;
     private RecyclerView recyclerUsers;
@@ -35,20 +31,26 @@ public class UserRegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_register);
+        initToolbarWithBackButton();
+        initInstances();
+        loadRegisteredUsers();
+    }
+
+    @Override
+    public void initInstances() {
         recyclerUsers = findViewById(R.id.recycler_view_schedules);
         tvNoRegisteredUser = findViewById(R.id.tv_no_schedules_list_msg);
         layoutRoot = findViewById(R.id.layout_register_user);
         FloatingActionButton fabRegisterUser = findViewById(R.id.fab_add_schedule);
 
         recyclerUsers.setLayoutManager(new LinearLayoutManager(this));
-        loadRegisteredUsers();
 
         fabRegisterUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ContentHolder.getUser().isVerified())
+                if (ContentHolder.getUser().isVerified()) {
                     registerNewUser();
-                else {
+                } else {
                     showNotVerifiedUserDialog();
                 }
             }
