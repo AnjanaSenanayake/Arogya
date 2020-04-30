@@ -6,7 +6,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitClient {
 
-    public static String SERVER_URL = "http://192.168.8.100:7800";
+    public static String SERVER_URL = "https://arogyawebapp.herokuapp.com/";
     private static Retrofit instance;
 
     public static Retrofit getInstance() {
