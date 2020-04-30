@@ -23,9 +23,13 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
+import com.github.nkzawa.emitter.Emitter.Listener;
+import com.github.nkzawa.socketio.client.IO;
+import com.github.nkzawa.socketio.client.Socket;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -52,6 +56,7 @@ public class RequestPassFragment extends BottomSheetDialogFragment {
     private RelativeLayout mLayout;
     private Calendar calendar = Calendar.getInstance();
     private boolean isValidFromDate = true;
+    private Socket socket;
 
     private CurfewPassRequest mCurfewPassRequest;
 
@@ -71,6 +76,17 @@ public class RequestPassFragment extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        try {
+            socket = IO.socket("https://arogyawebapp.herokuapp.com/");
+            socket.on("verifyUser", new Listener() {
+                @Override
+                public void call(final Object... args) {
+                    verificationView.setVisibility(View.GONE);
+                }
+            });
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
         initInstances(view);
         populateRequestedForSpinner();
         if (mCurfewPassRequest != null) {

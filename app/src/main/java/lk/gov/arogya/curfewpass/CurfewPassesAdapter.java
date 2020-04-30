@@ -38,9 +38,14 @@ public class CurfewPassesAdapter extends RecyclerView.Adapter<CurfewPassesAdapte
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
     private SimpleDateFormat sdfString = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-    public CurfewPassesAdapter(Context mContext, ArrayList<CurfewPassRequest> curfewPassRequests) {
+    CurfewPassesAdapter(Context mContext, ArrayList<CurfewPassRequest> curfewPassRequests) {
         this.mContext = mContext;
         this.curfewPassRequests = curfewPassRequests;
+    }
+
+    void updateListData(ArrayList<CurfewPassRequest> curfewPassRequests) {
+        this.curfewPassRequests = curfewPassRequests;
+        notifyDataSetChanged();
     }
 
     @Override

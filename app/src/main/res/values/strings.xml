@@ -44,6 +44,7 @@
     <string name="msg_submit_success">Submit Success</string>
 
     <!--Preference FileUtils Ids-->
+    <string name="id_uid">id_uid</string>
     <string name="id_full_name">id_full_name</string>
     <string name="id_dob">id_dob</string>
     <string name="id_gender">id_gender</string>

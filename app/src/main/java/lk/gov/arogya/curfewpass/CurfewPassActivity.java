@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import lk.gov.arogya.R;
 import lk.gov.arogya.api.RestAPI;
 import lk.gov.arogya.api.RestAPI.OnSuccessListener;
+import lk.gov.arogya.api.SocketListener;
+import lk.gov.arogya.api.SocketListener.OnChangeListener;
 import lk.gov.arogya.models.CurfewPassRequest;
 import lk.gov.arogya.support.ContentHolder;
 
@@ -20,6 +22,7 @@ public class CurfewPassActivity extends AppCompatActivity {
     private TextView tvNoRequests;
     private RecyclerView recyclerRequestedPasses;
     private FloatingActionButton fabRequestPass;
+    private CurfewPassesAdapter curfewPassesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,18 @@ public class CurfewPassActivity extends AppCompatActivity {
         fabRequestPass = findViewById(R.id.fab_request_curfew_pass);
 
         recyclerRequestedPasses.setLayoutManager(new LinearLayoutManager(this));
+
+        SocketListener.curfewPassApprovalListener(new OnChangeListener<String>() {
+            @Override
+            public void onSuccess(final String response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadRequestedPasses();
+                    }
+                });
+            }
+        });
 
         fabRequestPass.setOnClickListener(new OnClickListener() {
             @Override
@@ -48,10 +63,11 @@ public class CurfewPassActivity extends AppCompatActivity {
                 new OnSuccessListener<ArrayList<CurfewPassRequest>, Throwable>() {
                     @Override
                     public void onSuccess(final ArrayList<CurfewPassRequest> response) {
-                        CurfewPassesAdapter curfewPassesAdapter = new CurfewPassesAdapter(CurfewPassActivity.this,
+                        curfewPassesAdapter = new CurfewPassesAdapter(CurfewPassActivity.this,
                                 response);
                         recyclerRequestedPasses.setAdapter(curfewPassesAdapter);
                         tvNoRequests.setVisibility(View.GONE);
+                        curfewPassesAdapter.notifyDataSetChanged();
                     }
 
                     @Override

@@ -4,21 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.google.android.material.button.MaterialButton;
-
 import lk.gov.arogya.R;
+import lk.gov.arogya.api.RestAPI;
+import lk.gov.arogya.api.SocketListener;
+import lk.gov.arogya.api.SocketListener.OnChangeListener;
 import lk.gov.arogya.askuserinformation.AskUserInformationActivity;
-import lk.gov.arogya.parent.ToolbarActivity;
 import lk.gov.arogya.models.Constants;
 import lk.gov.arogya.models.User;
+import lk.gov.arogya.parent.ToolbarActivity;
 import lk.gov.arogya.support.ContentHolder;
 import lk.gov.arogya.support.PreferenceUtil;
-import lk.gov.arogya.api.RestAPI;
 
 public class PersonalInformationActivity extends ToolbarActivity {
 
@@ -37,15 +36,24 @@ public class PersonalInformationActivity extends ToolbarActivity {
     private ProgressBar mProgressBar;
     private boolean isLoading = false;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_information);
         initToolbarWithBackButton();
         initInstances();
-
         currentUser = (User) getIntent().getSerializableExtra("USER");
+        SocketListener.userVerificationListener(new OnChangeListener<Boolean>() {
+            @Override
+            public void onSuccess(final Boolean response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadUserData();
+                    }
+                });
+            }
+        });
         loadUserData();
     }
 

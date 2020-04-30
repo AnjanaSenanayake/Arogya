@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import lk.gov.arogya.R;
 import lk.gov.arogya.TempResultsActivity;
+import lk.gov.arogya.api.SocketListener;
 import lk.gov.arogya.curfewpass.CurfewPassActivity;
 import lk.gov.arogya.nearbypeopletracker.DiseaseContactTraceActivity;
 import lk.gov.arogya.otherusers.UserRegisterActivity;
@@ -29,6 +30,7 @@ public class MainActivity extends ToolbarActivity {
 //        initCollapsingToolbar();
         initFirebaseServices();
         FirebaseApp.initializeApp(this);
+        SocketListener.instantiate();
         initRecyclerView();
     }
 
